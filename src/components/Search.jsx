@@ -1,14 +1,16 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-function Search() {
-    const [searchQuery, setSearchQuery] = useState("");
+function Search({searchQuery, onSearchQueryChange }) {
+    const [query, setQuery] = useState("");
 
     const handleInputChange = (event) => {
-        setSearchQuery(event.target.value)
+        setQuery(event.target.value)
     };
     const handleFormSubmit = (event) => {
         event.preventDefault();
+        onSearchQueryChange(query)
+
     };
 
     return (
@@ -17,7 +19,7 @@ function Search() {
             <form onSubmit={handleFormSubmit}>
                 <input
                 type="text"
-                value={searchQuery}
+                value={query}
                 onChange={handleInputChange}
                 placeholder="Type your ingridients"
                 />
