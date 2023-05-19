@@ -15,17 +15,21 @@ function Search({searchQuery, onSearchQueryChange }) {
 
     return (
         <div className="container--search">
-            <h1>What are you preparing today?</h1>
+            <div className="search--box">
+            <h1 className="search--title">What are you preparing today?</h1>
             <form onSubmit={handleFormSubmit}>
                 <input
+                className="search-input"
                 type="text"
                 value={query}
                 onChange={handleInputChange}
                 placeholder="Type your ingridients"
                 />
-            <button type="submit">Let's go</button>
+                
+            <button className="btn--letsgo" type="submit">Let's go</button>
             </form>
-            <div className="btn--filters">
+            </div>
+            {/* <div className="btn--filters">
                 <button className="btn--filter" >All</button>
                 <button className="btn--filter" >Vegeterian</button>
                 <button className="btn--filter" >Vegan</button>
@@ -38,7 +42,7 @@ function Search({searchQuery, onSearchQueryChange }) {
             <div className="btn--nutrients">
                 <button className="btn--nutrient" >High Protein</button>
                 <button className="btn--nutrient" >Low Protein</button>
-            </div>
+            </div> */}
 
 
         </div>
