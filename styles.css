@@ -31,7 +31,7 @@
     --fs-600: 1.25rem;
     --fs-500: 1rem;
     --fs-400: 0.9rem;
-    --fs-300: 0.7rem;
+    --fs-300: 0.8rem;
 
     /* font-families */
     --fs-poppins: "Poppins", sans-serif;
@@ -202,7 +202,7 @@ select {
     flex-direction: column;
     text-align: center;
     padding-top: 15rem;
-    color:var(--primary-color-20);
+    color: var(--primary-color-20);
 }
 
 .text--homepage>h1 {
@@ -226,7 +226,7 @@ select {
 
 .btn--start-cooking {
     background-color: var(--primary-color-100);
-    color:var(--primary-color-20);
+    color: var(--primary-color-20);
     font-family: var(--fs-montserrat);
     font-size: var(--fs-500);
     padding: 1rem 3rem;
@@ -242,16 +242,127 @@ select {
     background-color: var(--secondary-color-100);
 
 }
- 
+
 
 @keyframes pulse {
     0% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.1);
     }
+
     100% {
         transform: scale(1);
     }
 }
+
+
+/*Search*/
+
+
+.search--box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    margin-top: 3.5rem;
+}
+
+.search--title {
+    font-family: var(--fs-poppins);
+    font-size: var(--fs-600)
+}
+
+.search-input {
+    margin-top: 1.5rem;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    font-family: var(--fs-montserrat);
+    background-color: var(--primary-color-20);
+    color: #333;
+    font-size: 16px;
+    outline: none;
+    width: 300px;
+}
+
+
+.search-input::placeholder {
+    color: #999;
+}
+
+.search-input:focus {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(39, 199, 7, 0.575);
+
+}
+
+.btn--letsgo {
+    margin-left: 1rem;
+    background-color: var(--primary-color-100);
+    color: var(--primary-color-20);
+    font-family: var(--fs-montserrat);
+    font-size: var(--fs-300);
+    padding: 1rem 2rem;
+    border-radius: 0.8rem;
+    border: none;
+    transition: background-color 0.7s ease;
+
+
+}
+@media (max-width: 35em) {
+   
+    .container--search {
+        display: flex;
+        justify-content: center;
+    }
+    .btn--letsgo {
+            display: flex;
+            
+        
+    }
+}
+.btn--letsgo:hover {
+background-color: var(--secondary-color-100);
+}
+
+/*Recipe Card*/
+
+.container--card {
+    margin-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card {
+
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0.8rem;
+  }
+  
+  .img--recipe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.8rem;
+  }
+  
+  .title--recipe {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    text-align: center;
+    font-size: var(--fs-300);
+    font-family: var(--fs-montserrat);
+ 
+  }
+  
