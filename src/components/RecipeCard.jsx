@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios"
 import { useState, useEffect } from "react";
 
-function RecipeCard({ searchQuery }) {
+function RecipeCard({ searchQuery, setSelectedRecipe }) {
     const [recipeData, setRecipeData] = useState(null);
     const [vegetarianFilter, setVegetarianFilter] = useState(false);
     const [veganFilter, setVeganFilter] = useState(false);
@@ -27,7 +27,7 @@ function RecipeCard({ searchQuery }) {
     return (
         <div className="container--card">
             {recipeData && recipeData.results.map((recipe) => (
-                <div key={recipe.id}>
+                <div key={recipe.id} onClick={() => setSelectedRecipe(recipe)}>
                     <div className="card">
                     <h1 className="title--recipe">{recipe.title}</h1>
                     <img className="img--recipe" src={recipe.image} alt={recipe.title} />
