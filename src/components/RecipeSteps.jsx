@@ -11,7 +11,7 @@ function RecipeSteps({
     isIngredientsSelected,
     isInstructionsSelected }) {
     const [steps, setSteps] = useState([]);
-    const apiKey = '734639a21c5f4d0394ffffbfba72612f';
+    const apiKey = '6b7d167564fc4204b1d70e57754cf57e'
 
     useEffect(() => {
         const fetchStepsData = async () => {
@@ -52,7 +52,6 @@ function RecipeSteps({
                     ))}
                 </ol>
             </div>
-            <button onClick={onGoBack}>Go back</button>
         </>
     );
 }
