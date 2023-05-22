@@ -1,19 +1,26 @@
 import React from "react";
-import { useState, useEffect } from "react";
 
-function RecipeDetails({ selectedRecipe, onGoBack }) {
-    return (
-        <>
-        <div className="recipe-details-container">
-
-            <h1 className="card-details-title">{selectedRecipe.title}</h1>
-            <img className="card-details-img" src={selectedRecipe.image} alt={selectedRecipe.title} />
-            </div>
-            <button onClick={onGoBack}>Go back</button>
-
-
-        </>
-    )
+function RecipeDetails({ selectedRecipe, isIngredientsSelected, isInstructionsSelected, onToggleIngredients, onToggleInstructions }) {
+  return (
+    <div className="recipe-details-container">
+      <img className="card-details-img" src={selectedRecipe.image} alt={selectedRecipe.title} />
+      <h1 className="card-details-title">{selectedRecipe.title}</h1>
+      <div className="card--buttons">
+        <button
+          className={`ingredients--btn ${isIngredientsSelected ? 'selected' : ''}`}
+          onClick={onToggleIngredients}
+        >
+          Ingredients
+        </button>
+        <button
+          className={`instructions--btn ${isInstructionsSelected ? 'selected' : ''}`}
+          onClick={onToggleInstructions}
+        >
+          Instructions
+        </button>
+      </div>
+    </div>
+  );
 }
 
-export default RecipeDetails
+export default RecipeDetails;

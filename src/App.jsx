@@ -1,7 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
 import RecipeCard from './components/RecipeCard'
-import RecipeDetails from './components/RecipeDetails'
+import RecipeIngredients from './components/RecipeIngredients'
+import RecipeSteps from './components/RecipeSteps'
 import Search from './components/Search'
 import HomePage from './HomePage'
 
@@ -9,6 +10,8 @@ function App() {
   const [startCooking, setStartCooking] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedRecipe, setSelectedRecipe] = useState(null)
+  const [displayIngredients, setDisplayIngredients] = useState(true)
+  const [displayInstructions, setDisplayInstructions] = useState(false)
 
 
   const handleStartCooking = () => {
@@ -28,6 +31,16 @@ function App() {
   const handleGoBack = () => {
     setSelectedRecipe(null)
   }
+  const handleToggleIngredients = () => {
+    setDisplayIngredients(true)
+    setDisplayInstructions(false)
+  }
+  const handleToggleInstructions = () => {
+    setDisplayIngredients(false)
+    setDisplayInstructions(true)
+  }
+
+
 
   return (
     <>
@@ -35,7 +48,30 @@ function App() {
       {startCooking && !selectedRecipe && (
         <Search searchQuery={searchQuery} onSearchQueryChange={handleSearchQueryChange} />
       )}
-      {startCooking && selectedRecipe && <RecipeDetails selectedRecipe={selectedRecipe} onGoBack={handleGoBack} />}
+      {startCooking && selectedRecipe && (
+        <>
+          {displayIngredients && !displayInstructions && (
+            <RecipeIngredients
+              selectedRecipe={selectedRecipe}
+              onGoBack={handleGoBack}
+              onToggleIngredients={handleToggleIngredients}
+              onToggleInstructions={handleToggleInstructions}
+              isIngredientsSelected={true}
+              isInstructionsSelected={false}
+            />
+          )}
+          {displayInstructions && !displayIngredients && (
+          <RecipeSteps
+            selectedRecipe={selectedRecipe}
+            onGoBack={handleGoBack}
+            onToggleIngredients={handleToggleIngredients}
+            onToggleInstructions={handleToggleInstructions}
+            isIngredientsSelected={false}
+            isInstructionsSelected={true}
+          />
+            )}
+        </>
+      )}
       {startCooking && !selectedRecipe && (
         <RecipeCard searchQuery={searchQuery} setSelectedRecipe={handleRecipeCardClick} />
       )}
@@ -43,4 +79,6 @@ function App() {
   );
 }
 
-export default App
+export default App;
+
+
