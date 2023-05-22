@@ -1,6 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import RecipeDetails from "./RecipeDetails";
+
 
 function RecipeIngredients({
     selectedRecipe,
@@ -35,15 +37,14 @@ function RecipeIngredients({
 
     return (
         <>
-            <div className="recipe-details-container">
-                <img className="card-details-img" src={selectedRecipe.image} alt={selectedRecipe.title} />
-                <h1 className="card-details-title">{selectedRecipe.title}</h1>
-                <div className="card--buttons">
-                    <button className={`ingredients--btn ${isIngredientsSelected ? 'selected' : ""}`} 
-                    onClick={onToggleIngredients}>Ingredients</button>
-                    <button className={`instructions--btn ${isInstructionsSelected ? "selected" : ""}`} onClick={onToggleInstructions}>Instructions</button>
-                </div>
-            </div>
+    <RecipeDetails
+        selectedRecipe={selectedRecipe}
+        onGoBack={onGoBack}
+        onToggleIngredients={onToggleIngredients}
+        onToggleInstructions={onToggleInstructions}
+        isIngredientsSelected={isIngredientsSelected}
+        isInstructionsSelected={isInstructionsSelected}
+        />
             <div className="ingredients--container">
                 <ul className="ingredients">
                     {ingredients.map((ingredient) => (
@@ -52,7 +53,6 @@ function RecipeIngredients({
                     ))}
                 </ul>
             </div>
-            <button onClick={onGoBack}>Go back</button>
         </>
     );
 }

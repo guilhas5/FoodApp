@@ -1,13 +1,15 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import RecipeDetails from "./RecipeDetails";
 
-function RecipeSteps({ selectedRecipe,
-     onToggleIngredients,
-      onToggleInstructions,
-       onGoBack, 
-       isIngredientsSelected,
-       isInstructionsSelected }) {
+function RecipeSteps({
+    selectedRecipe,
+    onToggleIngredients,
+    onToggleInstructions,
+    onGoBack,
+    isIngredientsSelected,
+    isInstructionsSelected }) {
     const [steps, setSteps] = useState([]);
     const apiKey = '734639a21c5f4d0394ffffbfba72612f';
 
@@ -34,15 +36,15 @@ function RecipeSteps({ selectedRecipe,
 
     return (
         <>
-            <div className="recipe-details-container">
-                <img className="card-details-img" src={selectedRecipe.image} alt={selectedRecipe.title} />
-                <h1 className="card-details-title">{selectedRecipe.title}</h1>
-                <div className="card--buttons">
-                    <button className={`ingredients--btn ${isIngredientsSelected ? 'selected' : ""}`} 
-                    onClick={onToggleIngredients}>Ingredients</button>
-                    <button className={`instructions--btn ${isInstructionsSelected ? "selected" : ""}`} onClick={onToggleInstructions}>Instructions</button>
-                </div>
-            </div>
+            <RecipeDetails
+                selectedRecipe={selectedRecipe}
+                onGoBack={onGoBack}
+                onToggleIngredients={onToggleIngredients}
+                onToggleInstructions={onToggleInstructions}
+                isIngredientsSelected={isIngredientsSelected}
+                isInstructionsSelected={isInstructionsSelected}
+            />
+
             <div className="instructions--container">
                 <ol className="instructions">
                     {steps.map((step) => (
