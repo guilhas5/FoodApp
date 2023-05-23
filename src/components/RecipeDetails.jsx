@@ -14,7 +14,7 @@ function RecipeDetails({
   isInstructionsSelected }) {
   const [readyInMinutes, setReadyInMinutes] = useState(0);
   const [servings, setServings] = useState(0);
-  const apiKey = 'dcbd98a3ecbd499e87662d41d6fecdb5'
+  const apiKey = '734639a21c5f4d0394ffffbfba72612f'
 
 
   useEffect(() => {
