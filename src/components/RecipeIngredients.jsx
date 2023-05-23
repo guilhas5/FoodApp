@@ -12,6 +12,7 @@ function RecipeIngredients({
     isIngredientsSelected,
     isInstructionsSelected, }) {
     const [ingredients, setIngredients] = useState([])
+   
 
     const apiKey = '6b7d167564fc4204b1d70e57754cf57e'
 
@@ -24,6 +25,8 @@ function RecipeIngredients({
                 );
                 const fetchedIngredientsData = response.data.extendedIngredients
                 setIngredients(fetchedIngredientsData)
+
+
             } catch (error) {
                 console.log("Error fetching recipe data", error)
             }
@@ -37,14 +40,15 @@ function RecipeIngredients({
 
     return (
         <>
-    <RecipeDetails
-        selectedRecipe={selectedRecipe}
-        onGoBack={onGoBack}
-        onToggleIngredients={onToggleIngredients}
-        onToggleInstructions={onToggleInstructions}
-        isIngredientsSelected={isIngredientsSelected}
-        isInstructionsSelected={isInstructionsSelected}
-        />
+            <RecipeDetails
+                selectedRecipe={selectedRecipe}
+                onGoBack={onGoBack}
+                onToggleIngredients={onToggleIngredients}
+                onToggleInstructions={onToggleInstructions}
+                isIngredientsSelected={isIngredientsSelected}
+                isInstructionsSelected={isInstructionsSelected}
+            />
+           
             <div className="ingredients--container">
                 <ul className="ingredients">
                     {ingredients.map((ingredient) => (

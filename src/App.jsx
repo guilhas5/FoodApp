@@ -13,15 +13,16 @@ function App() {
   const [displayIngredients, setDisplayIngredients] = useState(true)
   const [displayInstructions, setDisplayInstructions] = useState(false)
   const [vegetarianFilter, setVegetarianFilter] = useState(false);
-
+ 
   const handleFilter = () => {
     if (vegetarianFilter) {
-      return 'vegeterian';
+      return 'vegetarian';
     } else {
       return 'vegan';
     }
   };
 
+  
   const toggleVegetarian = () => {
     setVegetarianFilter(!vegetarianFilter)
   }
@@ -87,9 +88,11 @@ function App() {
       {startCooking && !selectedRecipe && (
         <RecipeCard 
         searchQuery={searchQuery} 
-        vegetarian={toggleVegetarian} 
+        vegetarian={toggleVegetarian}
+        vegetarianFilter={vegetarianFilter}
         handleFilter={handleFilter} 
-        setSelectedRecipe={handleRecipeCardClick} />
+        setSelectedRecipe={handleRecipeCardClick}
+         />
       )}
     </>
   );

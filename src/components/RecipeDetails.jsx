@@ -1,10 +1,41 @@
 import React from 'react';
+import { useState,useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
 
-function RecipeDetails({ selectedRecipe, onGoBack, onToggleIngredients, onToggleInstructions, isIngredientsSelected, isInstructionsSelected }) {
+function RecipeDetails({ 
+  selectedRecipe, 
+  onGoBack, 
+  onToggleIngredients, 
+  onToggleInstructions, 
+  isIngredientsSelected, 
+  isInstructionsSelected }) {
+    const [readyInMinutes, setReadyInMinutes] = useState(0);
+    const [servings, setServings] = useState(0);
+    const apiKey = '6b7d167564fc4204b1d70e57754cf57e'
+
+
+    useEffect(() => {
+      const fetchRecipeData = async () => {
+        if(selectedRecipe && selectedRecipe.id)
+        try {
+          const response = await axios.get(
+            `https://api.spoonacular.com/recipes/${selectedRecipe.id}/information?apiKey=${apiKey}&includeNutrition=false`
+          );
+          const { readyInMinutes, servings } = response.data;
+          setReadyInMinutes(readyInMinutes);
+          setServings(servings);
+        } catch (error) {
+          console.log('Error fetching recipe data:', error);
+        }
+      };
+      fetchRecipeData();
+    }, [selectedRecipe && selectedRecipe.id]);
+
   return (
     <>
+    
     <div className="recipe--return">
         <button onClick={onGoBack} className="return--btn">
           <FontAwesomeIcon icon={faArrowLeft} style={{ color: '#129575' }} />
@@ -14,6 +45,7 @@ function RecipeDetails({ selectedRecipe, onGoBack, onToggleIngredients, onToggle
       
       <img className="card-details-img" src={selectedRecipe.image} alt={selectedRecipe.title} />
       <h1 className="card-details-title">{selectedRecipe.title}</h1>
+      
       <div className="card--buttons">
         <button className={`ingredients--btn ${isIngredientsSelected ? 'selected' : ''}`} onClick={onToggleIngredients}>
           Ingredients
@@ -22,6 +54,11 @@ function RecipeDetails({ selectedRecipe, onGoBack, onToggleIngredients, onToggle
           Instructions
         </button>
       </div>
+      <div className="recipe-info">
+          <p>Ready in {readyInMinutes} minutes</p>
+          <p>Servings: {servings}</p>
+        </div>
+      
     </div>
     </>
   );
