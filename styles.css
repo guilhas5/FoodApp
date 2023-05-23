@@ -184,7 +184,7 @@ select {
     padding-top: 6rem;
 }
 
-.chef--icon>h4 {
+.title--homepage {
     font-family: var(--fs-poppins);
     color: var(--primary-color-20);
     font-size: var(--fs-700);
@@ -205,7 +205,7 @@ select {
     color: var(--primary-color-20);
 }
 
-.text--homepage>h1 {
+.sub-title-homepage {
     font-family: var(--fs-poppins);
     font-weight: 800;
     font-size: var(--fs-800);
@@ -228,7 +228,7 @@ select {
     background-color: var(--primary-color-100);
     color: var(--primary-color-20);
     font-family: var(--fs-montserrat);
-    font-size: var(--fs-500);
+    font-size: var(--fs-600);
     padding: 1rem 3rem;
     border-radius: 0.8rem;
     animation: pulse 2s infinite;
@@ -271,7 +271,7 @@ select {
 
 .search--title {
     font-family: var(--fs-poppins);
-    font-size: var(--fs-600);
+    font-size: var(--fs-700);
     color: var(--neutral-color-gray1);
     
 }
@@ -459,7 +459,7 @@ select {
     background-color: var(--primary-color-100);
     color: var(--primary-color-20);
     font-family: var(--fs-montserrat);
-    font-size: var(--fs-300);
+    font-size: var(--fs-400);
     padding: 1rem 2rem;
     border-radius: 0.8rem;
     border: none;
@@ -480,11 +480,22 @@ select {
     background-color: var(--primary-color-100);
     color: var(--primary-color-20);
     font-family: var(--fs-montserrat);
-    font-size: var(--fs-300);
+    font-size: var(--fs-400);
     padding: 1rem 2rem;
     border-radius: 0.8rem;
     border: none;
 }
+
+.recipe--info {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    font-size: var(--fs-400);
+    font-family: var(--fs-montserrat);
+    color:var(--neutral-color-gray2)
+}
+
 
 
 /*Ingredients*/

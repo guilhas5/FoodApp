@@ -11,7 +11,7 @@ function RecipeSteps({
     isIngredientsSelected,
     isInstructionsSelected }) {
     const [steps, setSteps] = useState([]);
-    const apiKey = '6b7d167564fc4204b1d70e57754cf57e'
+    const apiKey = 'dcbd98a3ecbd499e87662d41d6fecdb5'
 
     useEffect(() => {
         const fetchStepsData = async () => {
@@ -44,7 +44,7 @@ function RecipeSteps({
                 isIngredientsSelected={isIngredientsSelected}
                 isInstructionsSelected={isInstructionsSelected}
             />
-
+                {isInstructionsSelected && (
             <div className="instructions--container">
                 <ol className="instructions">
                     {steps.map((step) => (
@@ -52,8 +52,11 @@ function RecipeSteps({
                     ))}
                 </ol>
             </div>
-        </>
+                )}
+        </> 
+                    
     );
+    
 }
 
 export default RecipeSteps;

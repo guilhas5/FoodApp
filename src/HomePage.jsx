@@ -6,10 +6,10 @@ function HomePage({ onStartCooking }) {
         <div className="container--homepage">
             <div className="chef--icon">
                 <img className="chef--img" src="/images/HomePage--chef.png" alt="chef" />
-                <h4>100K Healthy Recipes</h4>
+                <h4 className="title--homepage">Vegan & Vegetarian Recipes</h4>
                 <div className="text--homepage">
-                    <h1>Get Cooking</h1>
-                    <h5>Tasty way to find a Healthy Recipe</h5>
+                    <h1 className="sub-title-homepage">Get Cooking</h1>
+                    <h5>Tasty way to find a healthy recipe</h5>
                     <div className="btn--homepage">
                         <button onClick={onStartCooking} className="btn--start-cooking">Start Cooking</button>
                     </div>

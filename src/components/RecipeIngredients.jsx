@@ -14,7 +14,7 @@ function RecipeIngredients({
     const [ingredients, setIngredients] = useState([])
    
 
-    const apiKey = '6b7d167564fc4204b1d70e57754cf57e'
+    const apiKey = 'dcbd98a3ecbd499e87662d41d6fecdb5'
 
     useEffect(() => {
         const fetchIngredientsData = async () => {
