@@ -185,6 +185,7 @@ select {
 }
 
 .title--homepage {
+    text-align: center;
     font-family: var(--fs-poppins);
     color: var(--primary-color-20);
     font-size: var(--fs-700);
@@ -271,7 +272,7 @@ select {
 
 .search--title {
     font-family: var(--fs-poppins);
-    font-size: var(--fs-700);
+    font-size: var(--fs-600);
     color: var(--neutral-color-gray1);
     
 }
@@ -431,10 +432,13 @@ select {
     flex-direction: column;
     align-items: center;
     margin-top: 2rem;
-    padding-inline: 3rem;
-
+    
 }
 
+body {
+    overflow-x: hidden;
+  }
+  
 .card-details-img {
     border-radius: 0.8rem;
     width: 350px;
