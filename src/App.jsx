@@ -59,7 +59,8 @@ function App() {
     <>
       {!startCooking && <HomePage onStartCooking={handleStartCooking} />}
       {startCooking && !selectedRecipe && (
-        <Search searchQuery={searchQuery} onSearchQueryChange={handleSearchQueryChange} />
+        <Search searchQuery={searchQuery} onSearchQueryChange={handleSearchQueryChange} vegetarianFilter={vegetarianFilter} vegetarian={toggleVegetarian}
+        />
       )}
       {startCooking && selectedRecipe && (
         <>

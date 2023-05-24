@@ -5,13 +5,11 @@ import { useState, useEffect } from "react";
 function RecipeCard({
   searchQuery,
   setSelectedRecipe,
-  vegetarian,
   handleFilter,
-  vegetarianFilter
 
 }) {
   const [recipeData, setRecipeData] = useState(null);
-  
+
 
   const apiKey = '734639a21c5f4d0394ffffbfba72612f'
 
@@ -30,18 +28,10 @@ function RecipeCard({
     };
 
     fetchRecipeData();
-  }, [searchQuery, vegetarian, handleFilter, vegetarianFilter]);
+  }, [searchQuery, handleFilter]);
   return (
     <>
-      <div className="filter">
-        <button
-          className={`vegetarian-filter-btn ${vegetarianFilter ? "selected" : ""}`}
-          onClick={vegetarian}
-        >
-          Vegetarian options
-        </button>
 
-      </div>
       <div className="container--card">
 
         {recipeData &&

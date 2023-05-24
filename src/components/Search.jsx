@@ -1,7 +1,7 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-function Search({searchQuery, onSearchQueryChange }) {
+function Search({ searchQuery, onSearchQueryChange, vegetarian, vegetarianFilter }) {
     const [query, setQuery] = useState("");
 
     const handleInputChange = (event) => {
@@ -16,34 +16,27 @@ function Search({searchQuery, onSearchQueryChange }) {
     return (
         <div className="container--search">
             <div className="search--box">
-            <h1 className="search--title">What are you preparing today?</h1>
-            <form onSubmit={handleFormSubmit}>
-                <input
-                className="search-input"
-                type="text"
-                value={query}
-                onChange={handleInputChange}
-                placeholder="Type your ingridients"
-                />
-                
-            <button className="btn--letsgo" type="submit">Let's go</button>
-            </form>
-            </div>
-            {/* <div className="btn--filters">
-                <button className="btn--filter" >All</button>
-                <button className="btn--filter" >Vegeterian</button>
-                <button className="btn--filter" >Vegan</button>
-            </div>
-            <div className="btn--times">
-                <button className="btn--time" >-20min</button>
-                <button className="btn--time" >+30min</button>
-                <button className="btn--time" >+1h</button>
-            </div>
-            <div className="btn--nutrients">
-                <button className="btn--nutrient" >High Protein</button>
-                <button className="btn--nutrient" >Low Protein</button>
-            </div> */}
+                <h1 className="search--title">What are you preparing today?</h1>
+                <form onSubmit={handleFormSubmit}>
+                    <input
+                        className="search-input"
+                        type="text"
+                        value={query}
+                        onChange={handleInputChange}
+                        placeholder="Type your ingridients"
+                    />
+                    <div className="search-container-btn">
+                    <button className="btn--fullvegan" type="submit">Full Vegan</button>
+                        <button
+                            className={`vegetarian-filter-btn ${vegetarianFilter ? "selected" : ""}`}
+                            onClick={vegetarian}
+                        >
+                            Add Vegetarian
+                        </button>
+                        </div>
 
+                </form>
+            </div>
 
         </div>
     )

@@ -63,7 +63,7 @@
         --fs-700: 3.5rem;
         --fs-600: 2rem;
         --fs-500: 1.75rem;
-        --fs-400: 1.125rem;
+        --fs-400: 1.4rem;
 
     }
 }
@@ -271,6 +271,7 @@ select {
 }
 
 .search--title {
+    text-align: center;
     font-family: var(--fs-poppins);
     font-size: var(--fs-600);
     color: var(--neutral-color-gray1);
@@ -288,7 +289,7 @@ select {
     color: var(--neutral-color-gray1);
     font-size: 16px;
     outline: none;
-    width: 300px;
+    width: 325px;
 }
 
 
@@ -307,16 +308,17 @@ select {
     justify-content: center;
 }
 
+.search-container-btn {
+display: flex;
+}
 
-.btn--letsgo {
-    display: flex;
+.btn--fullvegan {
     margin-top: 1rem;
-    margin-left: 5.5rem;
     background-color: var(--primary-color-100);
     color: var(--primary-color-20);
     font-family: var(--fs-montserrat);
     font-size: var(--fs-400);
-    padding: 1rem 2rem;
+    padding: 1rem 2.2rem;
     border-radius: 0.8rem;
     border: none;
     transition: background-color 0.7s ease;
@@ -325,18 +327,30 @@ select {
 }
 
 
-.btn--letsgo:hover {
+.btn--fullvegan:hover {
     background-color: var(--secondary-color-100);
 }
 
-@media (min-width: 35em) {
-
-    .btn--letsgo {
-        display: inline;
-        margin-left: 2rem;
-
-    }
+.vegetarian-filter-btn {
+    display: flex;
+    margin-top: 1rem;
+    margin-left: 1rem;
+    background-color: var(--primary-color-100);
+    color: var(--primary-color-20);
+    font-family: var(--fs-montserrat);
+    font-size: var(--fs-400);
+    padding: 1rem 1rem;
+    border-radius: 0.8rem;
+    border: none;
+    transition: background-color 0.7s ease;
 }
+
+
+.vegetarian-filter-btn:hover {
+
+    background-color: var(--secondary-color-80);
+}
+
 
 /*Recipe Card*/
 
@@ -345,10 +359,10 @@ select {
 }
 
 .return--btn {
+    margin: 1rem;
     border: none;
-    outline: none;
     background-color: transparent;
-    font-size: var(--fs-700);
+    font-size: var(--fs-600);
     animation: pulse 1.5s infinite;
 }
 
@@ -358,6 +372,7 @@ select {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 2rem;
 }
 
 .card {
@@ -395,44 +410,18 @@ select {
 
 }
 
-@media (min-width: 35em) {
-    .card {
-        width: 300px;
-        height: 300px;
-    }
-}
+
 
 /* Recipe Details */
 
-.filter {
-    display: flex;
-    justify-content: center;
-    
-}
 
-.vegetarian-filter-btn {
-    margin-top: 1.5rem;
-    background-color: var(--primary-color-80);
-    color: var(--primary-color-20);
-    font-family: var(--fs-montserrat);
-    font-size: var(--fs-300);
-    padding: 0.5rem 0.8rem;
-    border-radius: 0.8rem;
-    border: none
-}
-
-
-.vegetarian-filter-btn:hover {
-
-    background-color: var(--secondary-color-80);
-}
 
 .recipe-details-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 2rem;
-    
+
 }
 
 body {
@@ -559,6 +548,7 @@ body {
     margin-top: 1rem;
     display: flex;
     margin-bottom: 2rem;
+    text-align: left;
 }
 
 .instructions {
@@ -566,7 +556,6 @@ body {
     font-size: var(--fs-400);
     color: var(--neutral-color-gray1);
     line-height: 2rem;
-    text-align: left;
     margin-right: 1rem;
 }
 
@@ -574,3 +563,29 @@ body {
     margin-top: 1rem;
 
 }
+
+
+/*Media Queries*/
+
+@media (min-width: 35em) {
+    .card {
+        width: 250px;
+        height: 250px;
+    }
+   
+        .search-input {
+            width: 370px;
+        }
+        .instructions--container {
+            margin-inline: 2rem;
+        }
+       
+    }
+    @media (min-width: 45em) {
+        .card {
+            width: 300px;
+            height: 300px;
+
+        }
+    }
+    
