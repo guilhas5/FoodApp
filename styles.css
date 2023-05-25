@@ -68,13 +68,7 @@
     }
 }
 
-/* ----------------- */
-/* Reset
- */
-/* ----------------- */
 
-/*  https://piccalil.li/blog/a-modern-css-reset
- 
 
 */
 /* Boz sizing */
@@ -181,7 +175,7 @@ select {
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding-top: 6rem;
+    padding-top: 4rem;
 }
 
 .title--homepage {
@@ -202,7 +196,7 @@ select {
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding-top: 15rem;
+    padding-top: 12rem;
     color: var(--primary-color-20);
 }
 
@@ -275,7 +269,7 @@ select {
     font-family: var(--fs-poppins);
     font-size: var(--fs-600);
     color: var(--neutral-color-gray1);
-    
+
 }
 
 .search-input {
@@ -309,7 +303,7 @@ select {
 }
 
 .search-container-btn {
-display: flex;
+    display: flex;
 }
 
 .btn--fullvegan {
@@ -420,14 +414,14 @@ display: flex;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 1rem;
 
 }
 
 body {
     overflow-x: hidden;
-  }
-  
+}
+
 .card-details-img {
     border-radius: 0.8rem;
     width: 350px;
@@ -486,7 +480,7 @@ body {
     flex-direction: column;
     font-size: var(--fs-400);
     font-family: var(--fs-montserrat);
-    color:var(--neutral-color-gray2)
+    color: var(--neutral-color-gray2)
 }
 
 
@@ -525,10 +519,12 @@ body {
     background-color: var(--secondary-color-100);
 
 }
+
 .vegetarian {
     background-color: var(--secondary-color-100);
 
 }
+
 /*Instructions*/
 
 .instructions--container>ol {
@@ -572,20 +568,30 @@ body {
         width: 250px;
         height: 250px;
     }
-   
-        .search-input {
-            width: 370px;
-        }
-        .instructions--container {
-            margin-inline: 2rem;
-        }
-       
-    }
-    @media (min-width: 45em) {
-        .card {
-            width: 300px;
-            height: 300px;
 
-        }
+    .search-input {
+        width: 370px;
     }
+
+    .instructions--container {
+        margin-inline: 2rem;
+    }
+
+    .ingredients--container {
+        text-align: center;
     
+    }.card-details-img {
+        width: 500px;
+        height: 350px;
+    }
+
+}
+
+@media (min-width: 45em) {
+    .card {
+        width: 300px;
+        height: 300px;
+
+    }
+
+}
