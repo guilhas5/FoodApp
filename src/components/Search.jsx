@@ -23,7 +23,7 @@ function Search({ searchQuery, onSearchQueryChange, vegetarian, vegetarianFilter
                         type="text"
                         value={query}
                         onChange={handleInputChange}
-                        placeholder="Type your ingridients"
+                        placeholder="Type your ingredients"
                     />
                     <div className="search-container-btn">
                     <button className="btn--fullvegan" type="submit">Full Vegan</button>
