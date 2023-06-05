@@ -34,8 +34,8 @@
     --fs-300: 0.8rem;
 
     /* font-families */
-    --fs-poppins: "Poppins", sans-serif;
-    --fs-montserrat: "Montserrat", sans-serif;
+    --ff-poppins: "Poppins", sans-serif;
+    --ff-montserrat: "Montserrat", sans-serif;
 
 
 }
@@ -180,7 +180,7 @@ select {
 
 .title--homepage {
     text-align: center;
-    font-family: var(--fs-poppins);
+    font-family: var(--ff-poppins);
     color: var(--primary-color-20);
     font-size: var(--fs-700);
     padding-top: 1rem;
@@ -201,13 +201,13 @@ select {
 }
 
 .sub-title-homepage {
-    font-family: var(--fs-poppins);
+    font-family: var(--ff-poppins);
     font-weight: 800;
     font-size: var(--fs-800);
 }
 
 .text--homepage>h5 {
-    font-family: var(--fs-poppins);
+    font-family: var(--ff-poppins);
     font-size: var(--fs-600);
 
 }
@@ -222,7 +222,7 @@ select {
 .btn--start-cooking {
     background-color: var(--primary-color-100);
     color: var(--primary-color-20);
-    font-family: var(--fs-montserrat);
+    font-family: var(--ff-montserrat);
     font-size: var(--fs-600);
     padding: 1rem 3rem;
     border-radius: 0.8rem;
@@ -266,7 +266,7 @@ select {
 
 .search--title {
     text-align: center;
-    font-family: var(--fs-poppins);
+    font-family: var(--ff-poppins);
     font-size: var(--fs-600);
     color: var(--neutral-color-gray1);
 
@@ -278,7 +278,7 @@ select {
     border: none;
     border-radius: 4px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    font-family: var(--fs-montserrat);
+    font-family: var(--ff-montserrat);
     background-color: var(--primary-color-20);
     color: var(--neutral-color-gray1);
     font-size: 16px;
@@ -310,7 +310,7 @@ select {
     margin-top: 1rem;
     background-color: var(--primary-color-100);
     color: var(--primary-color-20);
-    font-family: var(--fs-montserrat);
+    font-family: var(--ff-montserrat);
     font-size: var(--fs-400);
     padding: 1rem 2.2rem;
     border-radius: 0.8rem;
@@ -331,7 +331,7 @@ select {
     margin-left: 1rem;
     background-color: var(--primary-color-100);
     color: var(--primary-color-20);
-    font-family: var(--fs-montserrat);
+    font-family: var(--ff-montserrat);
     font-size: var(--fs-400);
     padding: 1rem 1rem;
     border-radius: 0.8rem;
@@ -400,7 +400,7 @@ select {
     color: #fff;
     text-align: center;
     font-size: var(--fs-300);
-    font-family: var(--fs-montserrat);
+    font-family: var(--ff-montserrat);
 
 }
 
@@ -429,7 +429,7 @@ body {
 }
 
 .card-details-title {
-    font-family: var(--fs-poppins);
+    font-family: var(--ff-poppins);
     font-size: var(--fs-600);
     color: var(--neutral-color-gray2);
     margin-top: 1rem;
@@ -445,7 +445,7 @@ body {
     margin-top: 1rem;
     background-color: var(--primary-color-100);
     color: var(--primary-color-20);
-    font-family: var(--fs-montserrat);
+    font-family: var(--ff-montserrat);
     font-size: var(--fs-400);
     padding: 1rem 2rem;
     border-radius: 0.8rem;
@@ -466,7 +466,7 @@ body {
     margin-left: 1rem;
     background-color: var(--primary-color-100);
     color: var(--primary-color-20);
-    font-family: var(--fs-montserrat);
+    font-family: var(--ff-montserrat);
     font-size: var(--fs-400);
     padding: 1rem 2rem;
     border-radius: 0.8rem;
@@ -479,7 +479,7 @@ body {
     gap: 1rem;
     flex-direction: column;
     font-size: var(--fs-400);
-    font-family: var(--fs-montserrat);
+    font-family: var(--ff-montserrat);
     color: var(--neutral-color-gray2)
 }
 
@@ -508,7 +508,7 @@ body {
 }
 
 .ingredients {
-    font-family: var(--fs-poppins);
+    font-family: var(--ff-poppins);
     font-size: var(--fs-400);
     color: var(--neutral-color-gray1);
     line-height: 2rem;
@@ -548,7 +548,7 @@ body {
 }
 
 .instructions {
-    font-family: var(--fs-poppins);
+    font-family: var(--ff-poppins);
     font-size: var(--fs-400);
     color: var(--neutral-color-gray1);
     line-height: 2rem;
