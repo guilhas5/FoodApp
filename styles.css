@@ -395,7 +395,7 @@ select {
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 10px;
+    padding-block: 10px;
     background-color: rgba(0, 0, 0, 0.6);
     color: #fff;
     text-align: center;
