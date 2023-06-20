@@ -15,14 +15,11 @@ function RecipeIngredients({
     const [ingredients, setIngredients] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-
-    const apiKey = '734639a21c5f4d0394ffffbfba72612f';
-
     useEffect(() => {
         const fetchIngredientsData = async () => {
             try {
                 const response = await axios.get(
-                    `https://api.spoonacular.com/recipes/${selectedRecipe.id}/information?apiKey=${apiKey}&includeNutrition=false`
+                    `https://api.spoonacular.com/recipes/${selectedRecipe.id}/information?apiKey=${import.meta.env.VITE_API_KEY}&includeNutrition=false`
 
                 );
                 const fetchedIngredientsData = response.data.extendedIngredients;

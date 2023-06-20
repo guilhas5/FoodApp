@@ -14,7 +14,6 @@ function RecipeDetails({
   isInstructionsSelected }) {
   const [readyInMinutes, setReadyInMinutes] = useState(0);
   const [servings, setServings] = useState(0);
-  const apiKey = '734639a21c5f4d0394ffffbfba72612f'
 
 
   useEffect(() => {
@@ -22,7 +21,7 @@ function RecipeDetails({
       if (selectedRecipe && selectedRecipe.id)
         try {
           const response = await axios.get(
-            `https://api.spoonacular.com/recipes/${selectedRecipe.id}/information?apiKey=${apiKey}&includeNutrition=false`
+            `https://api.spoonacular.com/recipes/${selectedRecipe.id}/information?apiKey=${import.meta.env.VITE_API_KEY}&includeNutrition=false`
           );
           const { readyInMinutes, servings } = response.data;
           setReadyInMinutes(readyInMinutes);

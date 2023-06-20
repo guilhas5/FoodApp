@@ -13,13 +13,12 @@ function RecipeSteps({
 
     const [steps, setSteps] = useState([]);
     const [isLoading, setIsLoading] = useState(true)
-    const apiKey = '734639a21c5f4d0394ffffbfba72612f'
 
     useEffect(() => {
         const fetchStepsData = async () => {
             try {
                 const response = await axios.get(
-                    `https://api.spoonacular.com/recipes/${selectedRecipe.id}/analyzedInstructions?apiKey=${apiKey}`
+                    `https://api.spoonacular.com/recipes/${selectedRecipe.id}/analyzedInstructions?apiKey=${import.meta.env.VITE_API_KEY}`
                 );
                 const fetchedStepsData = response.data.flatMap((instruction) =>
                     instruction.steps.map((step) => ({
