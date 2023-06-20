@@ -509,6 +509,24 @@ select {
 
 }
 
+/* Footer */
+.footer {
+    background-color: var(--primary-color-100);
+    padding: 2rem;
+    text-align: center;
+    color: var(--primary-color-20);
+    font-family: var(--ff-poppins);
+    font-size: var(--fs-400);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  
+  .footer-text {
+    margin: 0;
+  }
+  
 
 /*Media Queries*/
 
@@ -528,8 +546,10 @@ select {
 
     .ingredients--container {
         text-align: center;
-    
-    }.card-details-img {
+
+    }
+
+    .card-details-img {
         width: 500px;
         height: 350px;
     }
