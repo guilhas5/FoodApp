@@ -48,7 +48,7 @@ function RecipeSteps({
                 isInstructionsSelected={isInstructionsSelected}
             />
             {isLoading ? (
-                <h1>Loading our instructions list</h1>
+                <h1 className="loading">Loading our instructions list</h1>
             ) : (
                 isInstructionsSelected && (
                     <div className="instructions--container">

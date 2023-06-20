@@ -14,7 +14,7 @@ function App() {
   const [displayIngredients, setDisplayIngredients] = useState(true)
   const [displayInstructions, setDisplayInstructions] = useState(false)
   const [vegetarianFilter, setVegetarianFilter] = useState(false);
- 
+
   const handleFilter = () => {
     if (vegetarianFilter) {
       return 'vegetarian';
@@ -23,7 +23,7 @@ function App() {
     }
   };
 
-  
+
   const toggleVegetarian = () => {
     setVegetarianFilter(!vegetarianFilter)
   }
@@ -76,27 +76,27 @@ function App() {
             />
           )}
           {displayInstructions && !displayIngredients && (
-          <RecipeSteps
-            selectedRecipe={selectedRecipe}
-            onGoBack={handleGoBack}
-            onToggleIngredients={handleToggleIngredients}
-            onToggleInstructions={handleToggleInstructions}
-            isIngredientsSelected={false}
-            isInstructionsSelected={true}
-          />
-            )}
+            <RecipeSteps
+              selectedRecipe={selectedRecipe}
+              onGoBack={handleGoBack}
+              onToggleIngredients={handleToggleIngredients}
+              onToggleInstructions={handleToggleInstructions}
+              isIngredientsSelected={false}
+              isInstructionsSelected={true}
+            />
+          )}
         </>
       )}
       {startCooking && !selectedRecipe && (
-        <RecipeCard 
-        searchQuery={searchQuery} 
-        vegetarian={toggleVegetarian}
-        vegetarianFilter={vegetarianFilter}
-        handleFilter={handleFilter} 
-        setSelectedRecipe={handleRecipeCardClick}
-         />
+        <RecipeCard
+          searchQuery={searchQuery}
+          vegetarian={toggleVegetarian}
+          vegetarianFilter={vegetarianFilter}
+          handleFilter={handleFilter}
+          setSelectedRecipe={handleRecipeCardClick}
+        />
       )}
-    <Footer />
+      <Footer />
     </>
   );
 }

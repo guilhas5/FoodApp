@@ -34,7 +34,7 @@ function RecipeCard({
     <>
       <div className="container--card">
         {error ? (
-          <h1 className="recipe-notfound">We are sorry but our website is under maintenance.</h1>
+          <h1 className="error--message">We are sorry but our website is under maintenance.</h1>
         ) : recipeData ? (
           recipeData.results.length > 0 ? (
             recipeData.results.map((recipe) => (
@@ -46,10 +46,10 @@ function RecipeCard({
               </div>
             ))
           ) : (
-            <h1 className="recipe-notfound">We are sorry but we can't find a recipe.</h1>
+            <h1 className="error--message">We are sorry but we can't find a recipe.</h1>
           )
         ) : (
-          <h1 className="recipe-notfound">Loading...</h1>
+          <h1 className="loading">Loading...</h1>
         )}
       </div>
     </>

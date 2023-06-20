@@ -54,7 +54,7 @@ function RecipeIngredients({
             {isLoading
                 ?
                 (
-                    <h1>Loading our ingredients list</h1>
+                    <h1 className="loading">Loading our ingredients list</h1>
                 )
                 :
                 (
