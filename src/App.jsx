@@ -5,6 +5,7 @@ import RecipeIngredients from './components/RecipeIngredients'
 import RecipeSteps from './components/RecipeSteps'
 import Search from './components/Search'
 import HomePage from './HomePage'
+import Footer from './components/Footer'
 
 function App() {
   const [startCooking, setStartCooking] = useState(false)
@@ -95,6 +96,7 @@ function App() {
         setSelectedRecipe={handleRecipeCardClick}
          />
       )}
+    <Footer />
     </>
   );
 }
