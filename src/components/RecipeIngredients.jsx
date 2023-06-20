@@ -11,10 +11,12 @@ function RecipeIngredients({
     onToggleInstructions,
     isIngredientsSelected,
     isInstructionsSelected, }) {
-    const [ingredients, setIngredients] = useState([])
-   
 
-    const apiKey = '734639a21c5f4d0394ffffbfba72612f'
+    const [ingredients, setIngredients] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+
+
+    const apiKey = '734639a21c5f4d0394ffffbfba72612f';
 
     useEffect(() => {
         const fetchIngredientsData = async () => {
@@ -23,8 +25,9 @@ function RecipeIngredients({
                     `https://api.spoonacular.com/recipes/${selectedRecipe.id}/information?apiKey=${apiKey}&includeNutrition=false`
 
                 );
-                const fetchedIngredientsData = response.data.extendedIngredients
-                setIngredients(fetchedIngredientsData)
+                const fetchedIngredientsData = response.data.extendedIngredients;
+                setIngredients(fetchedIngredientsData);
+                setIsLoading(false);
 
 
             } catch (error) {
@@ -48,15 +51,22 @@ function RecipeIngredients({
                 isIngredientsSelected={isIngredientsSelected}
                 isInstructionsSelected={isInstructionsSelected}
             />
-           
-            <div className="ingredients--container">
-                <ul className="ingredients">
-                    {ingredients.map((ingredient) => (
-                        <li key={ingredient.id}>{ingredient.original} </li>
+            {isLoading
+                ?
+                (
+                    <h1>Loading our ingredients list</h1>
+                )
+                :
+                (
+                    <div className="ingredients--container">
+                        <ul className="ingredients">
+                            {ingredients.map((ingredient) => (
+                                <li key={ingredient.id}>{ingredient.original} </li>
 
-                    ))}
-                </ul>
-            </div>
+                            ))}
+                        </ul>
+                    </div>
+                )}
         </>
     );
 }

@@ -34,17 +34,14 @@
     --fs-300: 0.8rem;
 
     /* font-families */
+
     --ff-poppins: "Poppins", sans-serif;
     --ff-montserrat: "Montserrat", sans-serif;
 
 
 }
 
-
-
 /* font-families */
-
-
 
 @media (min-width: 35em) {
     :root {
@@ -68,18 +65,11 @@
     }
 }
 
-
-
-*/
-/* Boz sizing */
-
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
-
-/* Reset margins */
 
 body,
 h1,
@@ -103,46 +93,34 @@ p {
     font-weight: 400;
 }
 
-
-/*  set up the body*/
 body {
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    min-height: 100vh;
     font-family: var(--ff-sans-normal);
     font-size: var(--fs-400);
     color: hsl(var(--clr-white));
     background-color: hsl(var(--clr-dark));
     line-height: 1.5;
-    min-height: 100vh;
-    display: grid;
-    grid-template-rows: min-content 1fr;
-
     overflow-x: hidden;
     -webkit-user-select: none;
-    /* Safari */
     -ms-user-select: none;
-    /* IE 10 and IE 11 */
     user-select: none;
-    /* Standard syntax */
-
 }
 
-/* Make images easier to work with */
 img {
     max-width: 100%;
     display: block;
 }
 
-/* Inherit fonts for inputs and buttons */
 input,
 button,
 textarea,
 select {
     font: inherit;
     -webkit-tap-highlight-color: transparent;
-
-
 }
 
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
     html:focus-within {
         scroll-behavior: auto;
@@ -157,6 +135,7 @@ select {
         scroll-behavior: auto !important;
     }
 }
+
 
 /*Home Page*/
 
@@ -209,7 +188,6 @@ select {
 .text--homepage>h5 {
     font-family: var(--ff-poppins);
     font-size: var(--fs-600);
-
 }
 
 .btn--homepage {
@@ -228,16 +206,12 @@ select {
     border-radius: 0.8rem;
     animation: pulse 2s infinite;
     transition: background-color 0.7s ease;
-
-
 }
 
 
 .btn--start-cooking:hover {
     background-color: var(--secondary-color-100);
-
 }
-
 
 @keyframes pulse {
     0% {
@@ -253,9 +227,7 @@ select {
     }
 }
 
-
 /*Search*/
-
 
 .search--box {
     display: flex;
@@ -294,7 +266,6 @@ select {
 .search-input:focus {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(39, 199, 7, 0.575);
-
 }
 
 .container--search {
@@ -316,10 +287,7 @@ select {
     border-radius: 0.8rem;
     border: none;
     transition: background-color 0.7s ease;
-
-
 }
-
 
 .btn--fullvegan:hover {
     background-color: var(--secondary-color-100);
@@ -339,12 +307,10 @@ select {
     transition: background-color 0.7s ease;
 }
 
-
 .vegetarian-filter-btn:hover {
 
     background-color: var(--secondary-color-80);
 }
-
 
 /*Recipe Card*/
 
@@ -359,7 +325,6 @@ select {
     font-size: var(--fs-600);
     animation: pulse 1.5s infinite;
 }
-
 
 .container--card {
     margin-top: 3rem;
@@ -380,7 +345,6 @@ select {
 .card:hover {
     transform: scale(1.1);
     transition: 0.7s ease-in-out;
-
 }
 
 .img--recipe {
@@ -401,25 +365,15 @@ select {
     text-align: center;
     font-size: var(--fs-300);
     font-family: var(--ff-montserrat);
-
 }
 
-
-
 /* Recipe Details */
-
-
 
 .recipe-details-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 1rem;
-
-}
-
-body {
-    overflow-x: hidden;
 }
 
 .card-details-img {

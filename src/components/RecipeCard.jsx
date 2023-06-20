@@ -21,7 +21,7 @@ function RecipeCard({
         );
         const fetchRecipeData = response.data;
         setRecipeData(fetchRecipeData)
-        // Process the recipeData and update your component state
+
       } catch (error) {
         console.log('Error fetching recipe data:', error);
       }
@@ -29,12 +29,11 @@ function RecipeCard({
 
     fetchRecipeData();
   }, [searchQuery, handleFilter]);
+  
   return (
     <>
-
       <div className="container--card">
-
-        {recipeData &&
+        {recipeData && recipeData.results.length > 0 ? (
           recipeData.results.map((recipe) => (
             <div key={recipe.id} onClick={() => setSelectedRecipe(recipe)}>
               <div className="card">
@@ -42,7 +41,10 @@ function RecipeCard({
                 <img className="img--recipe" src={recipe.image} alt={recipe.title} />
               </div>
             </div>
-          ))}
+          ))
+        ) : (
+          <h1 className="recipe-notfound">We are sorry but we can't find a recipe</h1>
+        )}
       </div>
     </>
   );

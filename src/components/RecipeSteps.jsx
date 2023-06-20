@@ -10,7 +10,9 @@ function RecipeSteps({
     onGoBack,
     isIngredientsSelected,
     isInstructionsSelected }) {
+
     const [steps, setSteps] = useState([]);
+    const [isLoading, setIsLoading] = useState(true)
     const apiKey = '734639a21c5f4d0394ffffbfba72612f'
 
     useEffect(() => {
@@ -26,6 +28,7 @@ function RecipeSteps({
                     }))
                 );
                 setSteps(fetchedStepsData);
+                setIsLoading(false);
             } catch (error) {
                 console.log('Error fetching recipe data:', error);
             }
@@ -44,19 +47,21 @@ function RecipeSteps({
                 isIngredientsSelected={isIngredientsSelected}
                 isInstructionsSelected={isInstructionsSelected}
             />
-                {isInstructionsSelected && (
-            <div className="instructions--container">
-                <ol className="instructions">
-                    {steps.map((step) => (
-                        <li className="instruction--singular" key={step.number}>{step.step}</li>
-                    ))}
-                </ol>
-            </div>
-                )}
-        </> 
-                    
-    );
-    
+            {isLoading ? (
+                <h1>Loading our instructions list</h1>
+            ) : (
+                isInstructionsSelected && (
+                    <div className="instructions--container">
+                        <ol className="instructions">
+                            {steps.map((step) => (
+                                <li className="instruction--singular" key={step.number}>{step.step}</li>
+                            ))}
+                        </ol>
+                    </div>
+                )
+            )}
+        </>
+    )
 }
 
 export default RecipeSteps;
