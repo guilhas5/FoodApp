@@ -258,7 +258,6 @@ select {
     width: 325px;
 }
 
-
 .search-input::placeholder {
     color: var(--neutral-color-gray2);
 }
@@ -335,7 +334,6 @@ select {
 }
 
 .card {
-
     position: relative;
     width: 150px;
     height: 180px;
@@ -359,7 +357,7 @@ select {
     bottom: 0;
     left: 0;
     width: 100%;
-    padding-block: 10px;
+    padding-block: 0.8rem;
     background-color: rgba(0, 0, 0, 0.6);
     color: #fff;
     text-align: center;
@@ -437,8 +435,6 @@ select {
     color: var(--neutral-color-gray2)
 }
 
-
-
 /*Ingredients*/
 
 .ingredients--container>ul {
@@ -453,7 +449,6 @@ select {
     margin-left: -0.8em;
     font-size: 1.3rem;
 }
-
 
 .ingredients--container {
     text-align: left;
