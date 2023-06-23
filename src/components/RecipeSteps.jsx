@@ -18,7 +18,7 @@ function RecipeSteps({
         const fetchStepsData = async () => {
             try {
                 const response = await axios.get(
-                    `https://api.spoonacular.com/recipes/${selectedRecipe.id}/analyzedInstructions?apiKey=${import.meta.env.VITE_API_KEY}`
+                    `https://api.spoonacular.com/recipes/${selectedRecipe.id}/analyzedInstructions?apiKey=${import.meta.env.VITE_SOME_KEY}`
                 );
                 const fetchedStepsData = response.data.flatMap((instruction) =>
                     instruction.steps.map((step) => ({

@@ -4,8 +4,9 @@ function Footer() {
     return (
         <footer className="footer">
             <p className="footer-text">
-                <footer>&#169; 2023 Powered by plants</footer>
+                &#169; 2023 Powered by plants
             </p>
+
         </footer>
     );
 }

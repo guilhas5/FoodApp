@@ -2,7 +2,6 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-
 function RecipeCard({
   searchQuery,
   setSelectedRecipe,
@@ -11,12 +10,11 @@ function RecipeCard({
   const [recipeData, setRecipeData] = useState(null);
   const [error, setError] = useState(false);
 
-
   useEffect(() => {
     const fetchRecipeData = async () => {
       try {
         const response = await axios.get(
-          `https://api.spoonacular.com/recipes/complexSearch?apiKey=${import.meta.env.VITE_API_KEY}&query=${searchQuery}&diet=${handleFilter()}`
+          `https://api.spoonacular.com/recipes/complexSearch?apiKey=${import.meta.env.VITE_SOME_KEY}&query=${searchQuery}&diet=${handleFilter()}`
         );
         const fetchedRecipeData = response.data;
         setRecipeData(fetchedRecipeData);

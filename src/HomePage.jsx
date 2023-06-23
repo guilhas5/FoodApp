@@ -1,5 +1,4 @@
 import React from "react";
-import { useEffect, useState } from "react";
 
 function HomePage({ onStartCooking }) {
     return (
