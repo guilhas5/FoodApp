@@ -1,4 +1,10 @@
+import React from "react";
+import axios from "axios";
+import { useState, useEffect } from "react";
+
+
 function RecipeCard({ searchQuery, setSelectedRecipe, handleFilter }) {
+
   const [recipeData, setRecipeData] = useState(null);
   const [error, setError] = useState(false);
 
@@ -55,3 +61,5 @@ function RecipeCard({ searchQuery, setSelectedRecipe, handleFilter }) {
     </div>
   );
 }
+
+export default RecipeCard
