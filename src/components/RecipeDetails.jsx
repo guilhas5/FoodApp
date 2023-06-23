@@ -21,7 +21,7 @@ function RecipeDetails({
       if (selectedRecipe && selectedRecipe.id)
         try {
           const response = await axios.get(
-            `https://api.spoonacular.com/recipes/${selectedRecipe.id}/information?apiKey=${import.meta.env.VITE_API_KEY}&includeNutrition=false`
+            `https://api.spoonacular.com/recipes/${selectedRecipe.id}/information?apiKey=${import.meta.env.VITE_SOME_KEY}&includeNutrition=false`
           );
           const { readyInMinutes, servings } = response.data;
           setReadyInMinutes(readyInMinutes);
