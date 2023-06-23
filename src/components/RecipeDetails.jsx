@@ -39,29 +39,41 @@ function RecipeDetails({
       <div className="recipe--return">
 
         <button onClick={onGoBack} className="return--btn">
-          <FontAwesomeIcon icon={faArrowLeft} style={{ color: '#129575' }} />
+          <FontAwesomeIcon
+            icon={faArrowLeft}
+            style={{ color: '#129575' }} />
         </button>
       </div>
 
       <div className="recipe-details-container">
 
-        <img className="card-details-img" src={selectedRecipe.image} alt={selectedRecipe.title} />
+        <img className="card-details-img"
+          src={selectedRecipe.image}
+          alt={selectedRecipe.title} />
         <h1 className="card-details-title">{selectedRecipe.title}</h1>
 
         <div className="card--buttons">
-          <button className={`ingredients--btn ${isIngredientsSelected ? 'selected' : ''}`} onClick={onToggleIngredients}>
+          <button
+            className={`ingredients--btn ${isIngredientsSelected ? 'selected' : ''}`}
+            onClick={onToggleIngredients}>
             Ingredients
           </button>
-          <button className={`instructions--btn ${isInstructionsSelected ? 'selected' : ''}`} onClick={onToggleInstructions}>
+          <button
+            className={`instructions--btn ${isInstructionsSelected ? 'selected' : ''}`}
+            onClick={onToggleInstructions}>
             Instructions
           </button>
         </div>
         <div className="recipe--info">
           <p className="servings--icon">
-            <FontAwesomeIcon icon={faBowlFood} style={{ color: '#129575' }} /> {servings} servings
+            <FontAwesomeIcon
+              icon={faBowlFood}
+              style={{ color: '#129575' }} /> {servings} servings
           </p>
           <p className="time--icon">
-            <FontAwesomeIcon icon={faClock} style={{ color: '#129575' }} /> {readyInMinutes} minutes
+            <FontAwesomeIcon
+              icon={faClock}
+              style={{ color: '#129575' }} /> {readyInMinutes} minutes
           </p>
         </div>
 

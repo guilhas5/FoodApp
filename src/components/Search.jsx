@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-function Search({ searchQuery, onSearchQueryChange, vegetarian, vegetarianFilter }) {
+function Search({ onSearchQueryChange, vegetarian, vegetarianFilter }) {
     const [query, setQuery] = useState("");
 
     const handleInputChange = (event) => {
@@ -26,14 +26,15 @@ function Search({ searchQuery, onSearchQueryChange, vegetarian, vegetarianFilter
                         placeholder="Type your ingredients"
                     />
                     <div className="search-container-btn">
-                    <button className="btn--fullvegan" type="submit">Full Vegan</button>
+                        <button className="btn--fullvegan"
+                            type="submit">Full Vegan</button>
                         <button
                             className={`vegetarian-filter-btn ${vegetarianFilter ? "selected" : ""}`}
                             onClick={vegetarian}
                         >
                             Add Vegetarian
                         </button>
-                        </div>
+                    </div>
 
                 </form>
             </div>

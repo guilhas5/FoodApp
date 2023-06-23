@@ -53,7 +53,8 @@ function RecipeSteps({
                     <div className="instructions--container">
                         <ol className="instructions">
                             {steps.map((step) => (
-                                <li className="instruction--singular" key={step.number}>{step.step}</li>
+                                <li className="instruction--singular"
+                                    key={step.number}>{step.step}</li>
                             ))}
                         </ol>
                     </div>
