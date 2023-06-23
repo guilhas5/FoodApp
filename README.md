@@ -23,6 +23,7 @@ I hope you find it useful and enjoy exploring various recipes with ease!
 
 ## Follow these steps to run the project locally:
 #### Make sure you have Node.js and npm (Node Package Manager) installed on your machine.
+#### Get your own Api Key here [Spoonacular](https://spoonacular.com/)
 
 ### 1. Clone the repository:
 
